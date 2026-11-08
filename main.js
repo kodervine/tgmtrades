@@ -25,3 +25,10 @@ document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
   const stop = () => clearInterval(t);
   ["pointerdown", "mouseenter", "touchstart"].forEach((e) => track.parentElement.addEventListener(e, stop, { passive: true }));
 })();
+
+// Terms & Conditions link
+const TERMS_URL = "https://docs.google.com/document/d/10Go5Yi4-t7oz_74h7zeWxsOOqaku9hAPf1CLkd9OBQ8/edit?tab=t.0";
+document.querySelectorAll("[data-terms]").forEach((a) => {
+  a.href = TERMS_URL;
+  if (TERMS_URL !== "#") { a.target = "_blank"; a.rel = "noopener"; }
+});

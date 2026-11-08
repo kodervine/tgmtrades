@@ -290,3 +290,14 @@ footer nav a { text-decoration: none; letter-spacing: 0.1em; text-transform: upp
   .hero-photo { width: min(80%, 300px); margin-top: 8px; }
   .b-top { left: -6px; } .b-bot { right: -6px; }
 }
+
+/* access steps */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.step { border: 1px solid var(--line); border-radius: 22px; padding: 22px; background: rgba(232, 143, 143, 0.05); }
+.step .n { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--rose); color: var(--ink); font-weight: 700; }
+.step h3 { font-size: 1.7rem; margin: 12px 0 6px; }
+.step p { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 820px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+
+.tlink { color: var(--rose); text-underline-offset: 3px; }
+.fine { font-size: 0.8rem; color: var(--muted); margin-top: 20px; }
