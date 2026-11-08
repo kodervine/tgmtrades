@@ -301,3 +301,5 @@ footer nav a { text-decoration: none; letter-spacing: 0.1em; text-transform: upp
 
 .tlink { color: var(--rose); text-underline-offset: 3px; }
 .fine { font-size: 0.8rem; color: var(--muted); margin-top: 20px; }
+
+.cta-row { margin-top: 24px; }
