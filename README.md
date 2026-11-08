@@ -1,0 +1,15 @@
+# TGM Trades landing page
+
+Static page. Open `index.html` or deploy the folder to Netlify, Vercel or Cloudflare Pages.
+
+Colors and font come from thegirlsmanual.com theme: #121212, #E88F8F, cream #F1E6D6 (replaces gold, not a TGM color), #FBFBFB, #242833, Inter. Edit tokens in `:root` of `styles.css`.
+
+## Swap before launch
+- [ ] Confirm checkout link (`PAYMENT_URL` in `main.js`)
+- [x] Stats filled (150+, 8+)
+- [ ] Win screenshots: put in `assets/`, replace `.win` placeholders
+- [ ] Reviews (3 cards) with real names and text
+- [x] Miyyah photos and bio added (check wording with her)
+- [ ] Price / FAQ answers (`TODO` text)
+- [ ] Confirm the support features (starter path, peer mentorship, accountability) match what members get
+- [ ] Get Miyyah's approval on the "$2,000 a month" illustration (income-claim risk in ads)
