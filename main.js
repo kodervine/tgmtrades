@@ -32,3 +32,39 @@ document.querySelectorAll("[data-terms]").forEach((a) => {
   a.href = TERMS_URL;
   if (TERMS_URL !== "#") { a.target = "_blank"; a.rel = "noopener"; }
 });
+
+// Lightbox for win screenshots and community messages
+(() => {
+  const box = document.getElementById("lightbox");
+  if (!box) return;
+  const img = document.getElementById("lb-img");
+  const srcs = [...new Set([...document.querySelectorAll("[data-lightbox]")].map((el) => el.dataset.lightbox))];
+  let i = 0, lastFocus = null;
+  const show = (n) => { i = (n + srcs.length) % srcs.length; img.src = srcs[i]; };
+  const open = (src, from) => { lastFocus = from; show(srcs.indexOf(src)); box.hidden = false; document.body.style.overflow = "hidden"; box.querySelector(".lb-close").focus(); };
+  const close = () => { box.hidden = true; document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); };
+  document.querySelectorAll("[data-lightbox]").forEach((el) => el.addEventListener("click", () => open(el.dataset.lightbox, el)));
+  box.querySelector(".lb-close").onclick = close;
+  box.querySelector(".lb-prev").onclick = () => show(i - 1);
+  box.querySelector(".lb-next").onclick = () => show(i + 1);
+  box.addEventListener("click", (e) => { if (e.target === box) close(); });
+  document.addEventListener("keydown", (e) => {
+    if (box.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(i - 1);
+    if (e.key === "ArrowRight") show(i + 1);
+  });
+})();
+
+// Wins rail arrows
+(() => {
+  const rail = document.getElementById("wins-rail");
+  if (!rail) return;
+  const prev = document.querySelector(".rprev"), next = document.querySelector(".rnext");
+  const upd = () => { prev.disabled = rail.scrollLeft < 8; next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8; };
+  prev.onclick = () => rail.scrollBy({ left: -rail.clientWidth * 0.8, behavior: "smooth" });
+  next.onclick = () => rail.scrollBy({ left: rail.clientWidth * 0.8, behavior: "smooth" });
+  rail.addEventListener("scroll", upd, { passive: true });
+  rail.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") next.click(); if (e.key === "ArrowLeft") prev.click(); });
+  window.addEventListener("resize", upd); upd();
+})();
