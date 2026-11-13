@@ -337,3 +337,11 @@ footer nav a { text-decoration: none; letter-spacing: 0.1em; text-transform: upp
 .shot.wide { width: 500px; display: grid; place-items: center; }
 .shot.wide img { width: 100%; height: auto; }
 @media (max-width: 640px) { .shot.wide { width: 300px; } }
+
+/* Optional add-on callout (no CTA; ordered at Stripe checkout) */
+.addon { max-width: 640px; margin: 22px auto 0; padding: 20px 22px; text-align: left; border: 1px solid var(--line); border-radius: 18px; background: rgba(241, 230, 214, 0.03); }
+.addon-badge { display: inline-block; padding: 4px 11px; border-radius: 999px; background: rgba(232, 143, 143, 0.14); color: var(--gold); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+.addon h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--paper); margin: 12px 0 0; }
+.final .addon p { margin: 8px 0 0; font-size: 0.95rem; line-height: 1.6; color: var(--muted); }
+.final .addon .addon-note { font-size: 0.78rem; font-style: italic; opacity: 0.85; }
+@media (max-width: 560px) { .addon { padding: 18px 16px; } .addon h3 { font-size: 1.3rem; } }
