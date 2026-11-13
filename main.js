@@ -1,5 +1,5 @@
-// Checkout links. CONFIRM monthly is the $150/month link.
-const MONTHLY_URL = "https://buy.stripe.com/9B63cv1Tr9mW5wm50N9sk0w"; // $150 / month (from thegirlsmanual.com)
+// Checkout links.
+const MONTHLY_URL = "https://buy.stripe.com/5kQaEXeGd6aKbUKctf9sk0T"; // $150 / month
 const QUARTERLY_URL = "https://buy.stripe.com/8x2dR90Pn8iS8Iyal79sk0N"; // $400 / quarter
 
 document.querySelectorAll("[data-join]").forEach((a) => (a.href = MONTHLY_URL));
